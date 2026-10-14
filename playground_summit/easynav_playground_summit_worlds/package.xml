@@ -10,6 +10,9 @@
   <!-- URJC excavation world (worlds/urjc_excavation.world, models/urjc_excavation/), from
        urjc-excavation-world -->
   <license file="models/urjc_excavation/LICENSE">GPL-3.0-only</license>
+  <!-- Parking garage world (worlds/parking_garage*, models/parking_garage*, models/*_cube), from
+       parking-garage-world -->
+  <license file="models/parking_garage/LICENSE">GPL-3.0-only</license>
   <!-- Small warehouse world (worlds/small_warehouse.world, models/aws_robomaker_warehouse_*),
        from AWS RoboMaker's aws-robomaker-small-warehouse-world -->
   <license file="models/LICENSE-aws-robomaker">MIT-0</license>
