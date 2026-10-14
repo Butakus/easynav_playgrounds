@@ -44,6 +44,10 @@ The simulated Summit XL publishes:
 
 It also publishes TF, and listens on `/cmd_vel` (`geometry_msgs/Twist`). `twist_stamper` forwards it to the diff drive controller, which takes `TwistStamped` on `/robotnik_base_control/cmd_vel`.
 
+## Building the excavation maps
+
+`maps/excavation_urjc_world.pcd` samples the world's collision mesh (`models/urjc_excavation/meshes/URJC_excavation.stl`) uniformly, 20 points/m², in the map frame: the mesh is raised 5.77 m so that z = 0 is the terrain under the spawn point. `maps/excavation_urjc.navmap` meshes that cloud with `navmap_ros::from_points` at 1 m, dropping surfaces smaller than 4 m². Against the collision mesh its height error is 1 cm (median), 6 cm (p90). `maps/excavation_urjc.pcd`, the cloud the Bonxai map is built from, is unchanged.
+
 ## Building the warehouse maps
 
 The warehouse maps were generated from the simulation with two tools of NavMap's `navmap_tools`:
@@ -69,7 +73,7 @@ Then copy `warehouse.pcd`, `warehouse.pgm` and `warehouse.yaml` to `maps/`. Run 
 | --- | --- |
 | `launch/` | `gazebo_sim` (a world and the Summit XL), `world` (Gazebo with a world), `summit` (spawns the Summit XL in a running simulation), in YAML |
 | `config/bridge/` | ROS–Gazebo bridge topics |
-| `maps/` | Excavation (`excavation_urjc.navmap`, `.pcd`) and warehouse (`warehouse.yaml`, `warehouse_20cm.navmap`, `warehouse.pcd`) maps |
+| `maps/` | Excavation (`excavation_urjc.navmap`, `.pcd`, `excavation_urjc_world.pcd`) and warehouse (`warehouse.yaml`, `warehouse_20cm.navmap`, `warehouse.pcd`) maps |
 | `worlds/`, `models/` | The two worlds and their models |
 
 ## Authors and licensing
