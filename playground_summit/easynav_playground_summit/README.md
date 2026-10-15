@@ -65,6 +65,20 @@ ros2 launch easynav_playground_summit easynav_warehouse_amcl.launch.yaml
 
 The NavMap is flat, built from a 2D occupancy grid. Its `obstacles` filter keeps the static map and adds the points the sensors see within 3 m and below 1.2 m (`max_range`, `max_height`); the `inflation` filter (radius 2.0 m, scaling 1.5) keeps paths in the middle of the aisles. The RViz view (`rviz/easynav_warehouse.rviz`) shows the inflated layer. Localization error is about 0.15 m.
 
+### Parking garage configuration
+
+`easynav_parking_garage.launch.yaml` runs the Summit XL in a parking garage (`worlds/parking_garage.world`) with three floors stacked over the same footprint and linked by ramps:
+
+```bash
+ros2 launch easynav_playground_summit easynav_parking_garage.launch.yaml
+```
+
+| Launch file | Controller | Localizer | Maps |
+| --- | --- | --- | --- |
+| `easynav_parking_garage.launch.yaml` | Regulated Pure Pursuit | NavMap AMCL | Multi-level NavMap `maps/parking_garage.navmap`; Bonxai `maps/parking_garage_bonxai.pcd` |
+
+Both maps come from simulated 3D lidar scans of the world's collision mesh (a VLP-16 0.8 m above the ground every 2 m on floors 0-2, so hidden faces never enter the map): `maps/parking_garage.pcd` keeps one point per 0.1 m voxel (the centroid), in the map frame with z = 0 on the ground floor under the spawn point. The NavMap meshes it with `navmap_ros::from_points` at 0.4 m: floors 0, 1 and 2 are a single surface that overlaps itself in XY and connects through the ramps, so A* plans between floors; the ramps (2.9 m between their side walls) leave about 0.9 m of clearance to the robot's 0.7 m inscribed radius. The roof has no ramp in the model and is a separate, unreachable surface. The Bonxai map keeps one point per occupied 0.3 m voxel (floors, walls, pillars and ceilings). The `obstacles` filter ignores points above 1.2 m, so the ceiling of each floor is not an obstacle.
+
 ### Localization
 
 In the excavation, the terrain is smooth and the Bonxai cloud is sparse, so NavMap AMCL has little to correct against: it keeps the heading from the IMU, but its position can drift 0.5–1 m from the true one. The GPS configuration is the accurate one outdoors (about 0.15 m): its map frame is the Gazebo world's (`latitude_origin`/`longitude_origin` are the world's `spherical_coordinates`).
