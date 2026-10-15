@@ -50,6 +50,7 @@ All of them plan with A* over the NavMap (`maps/excavation_urjc.navmap`).
 | `easynav_mpc.launch.yaml` | MPC | NavMap AMCL | |
 | `easynav_gps.launch.yaml` | Regulated Pure Pursuit | GPS (UKF) | `FusionLocalizer` fusing the GPS position, wheel odometry and IMU heading; no Bonxai map |
 | `easynav_navmap_dummy.launch.yaml` | — | — | Only loads and shows `maps/excavation_urjc_2.navmap` |
+| `easynav_navmap_local.launch.yaml` | — (teleop) | — | Local NavMap: rebuilt around the robot, in `base_footprint`, from the 3D laser (NavMap maps manager in local mode). Drive it with `ros2 run teleop_twist_keyboard teleop_twist_keyboard` |
 
 ### Warehouse configuration
 
