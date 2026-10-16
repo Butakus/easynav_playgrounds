@@ -143,14 +143,18 @@ maps_manager_node:
       filters: [obstacles, inflation]
       obstacles:
         plugin: easynav_navmap_maps_manager/NavMapMapsManager/ObstaclesFilter
-        max_range: 5.0              # rough terrain: farther, a small tilt error lifts the ground
-        min_height: 0.3             # above the NavMap surface: the mesh, the terrain and the localization differ
-        min_height_per_meter: 0.05  # +0.05 m per meter from the robot (about 3 deg of tilt error)
+        memory:                     # obstacles out of sight are remembered; rays clear them
+          enabled: true
+          p_hit: 0.55               # 3 hits in a row to mark a cell: a short tilt does not stain
+          decay_time: 10.0          # what is not seen again fades back in 10 s
+        max_range: 4.0              # rough terrain: farther, a small tilt error lifts the ground
+        min_height: 0.45            # above the NavMap surface: the 1 m mesh, the terrain and the localization differ
+        min_height_per_meter: 0.08  # +0.08 m per meter from the robot (about 4.5 deg of tilt error)
       # Cells within robot_geometry.inscribed_radius are blocked; up to inflation_radius the cost
       # keeps paths away from obstacles (and from the map borders).
       inflation:
         plugin: easynav_navmap_maps_manager/NavMapMapsManager/InflationFilter
-        inflation_radius: 2.0
+        inflation_radius: 1.5          # 2.0 made the ramps costly: long detours
         cost_scaling_factor: 1.5
 
 planner_node:
@@ -160,6 +164,10 @@ planner_node:
     astart:
       freq: 1.0
       plugin: easynav_navmap_planner/AStarPlanner
+      cost_weight: 3.0             # default 5: the inflation cost weighs less, fewer detours
+      terrain:
+        slope_weight: 100.0        # weight * tan^2(slope) per m: 10 deg +3, 20 deg +13 (flat: 2)
+        max_slope_deg: 25.0        # steeper NavCels are not traversable for the Summit XL
       
 
 sensors_node:
