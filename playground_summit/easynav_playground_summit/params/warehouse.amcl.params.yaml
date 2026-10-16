@@ -95,7 +95,7 @@ localizer_node:
     amcl:
       rt_freq: 50.0
       freq: 5.0
-      reseed_freq: 0.1
+      reseed_freq: 1.0
       plugin: easynav_navmap_localizer/AMCLLocalizer
       downsampled_cloud_size: 10.0
       num_particles: 100
