@@ -26,7 +26,7 @@ launch:
     description: RViz2 configuration file, with relative topic names
 - arg: {name: gui, default: 'true', description: Set to false to run Gazebo headless}
 - arg: {name: rviz, default: 'true', description: Start one RViz2 per robot}
-- arg: {name: lidar_range, default: '3.0', description: Maximum lidar range (m)}
+- arg: {name: lidar_range, default: '12.0', description: Maximum lidar range (m)}
 
 - include:
     file: $(find-pkg-share easynav_playground_kobuki_worlds)/launch/multirobot_gazebo_sim.launch.yaml

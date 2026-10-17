@@ -1,13 +1,13 @@
 <?xml version="1.0" ?>
 
 <robot name="kobuki_gazebo" xmlns:xacro="http://ros.org/wiki/xacro">
-  <xacro:macro name="kobuki_gazebo" params="lidar camera namespace tf_namespace lidar_range:=3.0">
+  <xacro:macro name="kobuki_gazebo" params="lidar camera namespace tf_namespace lidar_range:=12.0">
 
     <gazebo>
       <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
         <left_joint>$(arg namespace)wheel_left_joint</left_joint>
         <right_joint>$(arg namespace)wheel_right_joint</right_joint>
-        <wheel_separation>0.223087</wheel_separation>
+        <wheel_separation>0.230</wheel_separation>
         <wheel_radius>0.035</wheel_radius>
         <max_linear_acceleration>1.0</max_linear_acceleration> 
         <topic>$(arg namespace)cmd_vel</topic>

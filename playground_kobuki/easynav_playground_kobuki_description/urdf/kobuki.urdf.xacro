@@ -9,7 +9,7 @@
   <xacro:arg name="lidar" default="false" />
   <xacro:arg name="camera" default="false" />
   <xacro:arg name="structure" default="false" />
-  <xacro:arg name="lidar_range" default="3.0" />
+  <xacro:arg name="lidar_range" default="12.0" />
 
   <!-- Namespace will be applied to all TF frames and topics.
        This is required if multiple robots are launched at the same time.

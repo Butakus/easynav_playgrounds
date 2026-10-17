@@ -74,7 +74,7 @@ All of them use the `maps/home.map` simple map.
 | `rviz_config` | Per launch file | RViz2 configuration file |
 | `gui` | `true` | Set to `false` to run Gazebo headless |
 | `rviz` | `true` | Set to `false` to skip RViz2 |
-| `lidar_range` | `3.0` | Maximum lidar range, in meters |
+| `lidar_range` | `12.0` | Maximum lidar range, in meters |
 | `camera` | `false` | Enable the RGBD camera |
 
 For example, to run headless with your own parameters:

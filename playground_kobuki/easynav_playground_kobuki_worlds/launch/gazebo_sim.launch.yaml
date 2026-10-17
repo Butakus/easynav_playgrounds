@@ -20,7 +20,7 @@ launch:
     default: $(find-pkg-share easynav_playground_kobuki_worlds)/worlds/small_house.world
     description: Gazebo world file
 - arg: {name: gui, default: 'true', description: Set to false to run Gazebo headless}
-- arg: {name: lidar_range, default: '3.0', description: Maximum lidar range (m)}
+- arg: {name: lidar_range, default: '12.0', description: Maximum lidar range (m)}
 - arg: {name: camera, default: 'false', description: Enable the RGBD camera}
 
 - include:

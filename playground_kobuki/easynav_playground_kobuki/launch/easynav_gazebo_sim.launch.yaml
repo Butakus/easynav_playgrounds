@@ -26,7 +26,7 @@ launch:
     description: RViz2 configuration file
 - arg: {name: gui, default: 'true', description: Set to false to run Gazebo headless}
 - arg: {name: rviz, default: 'true', description: Start RViz2}
-- arg: {name: lidar_range, default: '3.0', description: Maximum lidar range (m)}
+- arg: {name: lidar_range, default: '12.0', description: Maximum lidar range (m)}
 - arg: {name: camera, default: 'false', description: Enable the RGBD camera}
 
 - include:
