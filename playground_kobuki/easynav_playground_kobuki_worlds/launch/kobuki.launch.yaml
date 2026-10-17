@@ -25,7 +25,7 @@ launch:
 - arg: {name: P, default: '0.0'}
 - arg: {name: Y, default: '0.0'}
 - arg: {name: lidar, default: 'true', description: Enable the lidar}
-- arg: {name: lidar_range, default: '3.0', description: Maximum lidar range (m)}
+- arg: {name: lidar_range, default: '12.0', description: Maximum lidar range (m)}
 - arg: {name: camera, default: 'false', description: Enable the RGBD camera}
 - arg: {name: structure, default: 'true', description: Mount the hexagon plates and poles}
 - arg: {name: use_sim_time, default: 'true'}
