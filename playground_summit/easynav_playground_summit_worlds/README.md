@@ -60,6 +60,12 @@ The parking garage maps come from simulated 3D lidar scans of the world's collis
 - **`maps/parking_garage.navmap`:** meshes that cloud with `navmap_ros::from_points` at 0.4 m. Floors 0–2 are one surface that overlaps itself and connects through the ramps.
 - **`maps/parking_garage_bonxai.pcd`:** keeps one point per occupied 0.3 m voxel.
 
+
+## Building the two floors URJC maps
+
+The two floors maps come from a real mapping run of a Summit XL with a 32-ring lidar in a two-floor URJC building: 2 018 scans, each with the pose of the sensor (scan-to-map registration with point-to-plane ICP, seeded by the odometry). They have no world: `easynav_playground_summit`'s `easynav_two_floors.launch.yaml` shows them.
+- **`maps/two_floors.navmap`:** `navmap_ros::from_points` with the sensor positions (free-space carving along each ray, and faces seen only from below dropped) at 0.3 m, with `max_dz` 0.35, `max_slope_deg` 40, `max_hole_area` 10 and `min_surface_area` 4. The route the robot drove lies 99.2 % on the map, all of it on one surface that joins both floors through the outdoor ramp.
+- **`maps/two_floors_bonxai.pcd`:** one point (the centroid) per occupied 0.3 m voxel of the same scans, with free-space carving only: ceilings stay, as they are obstacles in 3D.
 ## Building the warehouse maps
 
 The warehouse maps were generated from the simulation with two tools of NavMap's `navmap_tools`:
@@ -85,7 +91,7 @@ Then copy `warehouse.pcd`, `warehouse.pgm` and `warehouse.yaml` to `maps/`. Run 
 | --- | --- |
 | `launch/` | `gazebo_sim` (a world and the Summit XL), `world` (Gazebo with a world), `summit` (spawns the Summit XL in a running simulation), in YAML |
 | `config/bridge/` | ROS–Gazebo bridge topics |
-| `maps/` | Excavation (`excavation_urjc.navmap`, `.pcd`, `excavation_urjc_world.pcd`) and warehouse (`warehouse.yaml`, `warehouse_20cm.navmap`, `warehouse.pcd`) maps |
+| `maps/` | Excavation (`excavation_urjc.navmap`, `.pcd`, `excavation_urjc_world.pcd`), warehouse (`warehouse.yaml`, `warehouse_20cm.navmap`, `warehouse.pcd`), parking garage (`parking_garage.navmap`, `.pcd`, `parking_garage_bonxai.pcd`) and two floors URJC (`two_floors.navmap`, `two_floors_bonxai.pcd`) maps |
 | `worlds/`, `models/` | The two worlds and their models |
 
 ## Authors and licensing
