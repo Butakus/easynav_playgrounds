@@ -2,7 +2,7 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>easynav_playground_kobuki</name>
-  <version>0.5.0</version>
+  <version>0.5.1</version>
   <description>Easy Navigation playground with a Kobuki: EasyNav configurations and launchers for the Kobuki simulation (costmap with RPP, MPPI, MPC, SeReST, MH-AMCL, routes and safety mode; Simple; mapping; multirobot).</description>
   <maintainer email="fmrico@gmail.com">Francisco Martín Rico</maintainer>
   <license file="LICENSE">Apache-2.0</license>

@@ -2,8 +2,8 @@
 Changelog for package easynav_playground_summit_worlds
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.5.1 (2026-10-21)
+------------------
 * Parking garage world
 * Excavation: NavMap from the collision mesh, and terrain tiles stitched without steps
 * NavMaps moved to file format version 2

@@ -2,7 +2,7 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>easynav_playground_omni_worlds</name>
-  <version>0.5.0</version>
+  <version>0.5.1</version>
   <description>Gazebo (Harmonic or newer) simulation of omnidirectional robots for the EasyNav playgrounds: two mazes and their maps, the kinematics node, and the launcher that spawns the chosen robot with its controllers and the ROS-Gazebo bridge.</description>
   <maintainer email="fmrico@gmail.com">Francisco Martín Rico</maintainer>
   <!-- Mazes, maps, bridge configuration, kinematics node and test scripts: Copyright (c) 2025

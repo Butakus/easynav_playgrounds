@@ -2,8 +2,8 @@
 Changelog for package easynav_playground_summit
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.5.1 (2026-10-21)
+------------------
 * Parking garage world
 * NavMap navigation in 3D: local NavMap, obstacle memory, terrain-aware planning
 * Localization and goal parameters for 3D (NavMap AMCL)

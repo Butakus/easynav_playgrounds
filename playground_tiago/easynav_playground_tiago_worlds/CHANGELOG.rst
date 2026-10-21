@@ -2,8 +2,8 @@
 Changelog for package easynav_playground_tiago_worlds
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.5.1 (2026-10-21)
+------------------
 * NavMaps moved to file format version 2
 * Enable cpplint and copyright linters
 * Contributors: Francisco Martín Rico

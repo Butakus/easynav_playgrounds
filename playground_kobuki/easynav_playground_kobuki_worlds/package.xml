@@ -2,7 +2,7 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>easynav_playground_kobuki_worlds</name>
-  <version>0.5.0</version>
+  <version>0.5.1</version>
   <description>Gazebo (Harmonic or newer) simulation of a Kobuki for the EasyNav playgrounds: the AWS small house world, its map, and the launchers that spawn one or several Kobukis with the ROS-Gazebo bridge.</description>
   <maintainer email="fmrico@gmail.com">Francisco Martín Rico</maintainer>
   <!-- Launchers, bridge configuration and maps -->

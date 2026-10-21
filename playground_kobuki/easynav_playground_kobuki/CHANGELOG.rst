@@ -2,8 +2,8 @@
 Changelog for package easynav_playground_kobuki
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.5.1 (2026-10-21)
+------------------
 * Kobuki: wheel separation as the real robot, 12 m lidar
 * Enable cpplint and copyright linters
 * Contributors: Francisco Martín Rico

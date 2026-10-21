@@ -2,7 +2,7 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>easynav_playground_kobuki_description</name>
-  <version>0.5.0</version>
+  <version>0.5.1</version>
   <description>Kobuki (Turtlebot 2) robot description for the EasyNav playgrounds: URDF and meshes, from kobuki_ros.</description>
   <maintainer email="fmrico@gmail.com">Francisco Martín Rico</maintainer>
   <!-- The Kobuki model (urdf/, meshes/): Copyright (c) 2012, Yujin Robot, from kobuki_ros -->

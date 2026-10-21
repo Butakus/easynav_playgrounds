@@ -2,7 +2,7 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>easynav_playground_tiago_worlds</name>
-  <version>0.5.0</version>
+  <version>0.5.1</version>
   <description>Gazebo (Harmonic or newer) simulation of TIAGo for the EasyNav playgrounds: the AWS small house world, its maps, and the launchers that spawn TIAGo with its controllers and the ROS-Gazebo bridge.</description>
   <maintainer email="fmrico@gmail.com">Francisco Martín Rico</maintainer>
   <!-- Launchers, bridge configuration and maps (the bridge topics come from PAL Robotics'
