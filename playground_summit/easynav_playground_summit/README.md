@@ -80,20 +80,6 @@ ros2 launch easynav_playground_summit easynav_parking_garage.launch.yaml
 
 Both maps come from simulated 3D lidar scans of the world's collision mesh (a VLP-16 0.8 m above the ground every 2 m on floors 0-2, so hidden faces never enter the map): `maps/parking_garage.pcd` keeps one point per 0.1 m voxel (the centroid), in the map frame with z = 0 on the ground floor under the spawn point. The NavMap meshes it with `navmap_ros::from_points` at 0.4 m: floors 0, 1 and 2 are a single surface that overlaps itself in XY and connects through the ramps, so A* plans between floors; the ramps (2.9 m between their side walls) leave about 0.9 m of clearance to the robot's 0.7 m inscribed radius. The roof has no ramp in the model and is a separate, unreachable surface. The Bonxai map keeps one point per occupied 0.3 m voxel (floors, walls, pillars and ceilings). The `obstacles` filter ignores points above 1.2 m, so the ceiling of each floor is not an obstacle.
 
-### Two floors URJC map viewer
-
-`easynav_two_floors.launch.yaml` shows the maps of a real two-floor building of the URJC, mapped with a Summit XL carrying a 32-ring lidar: the robot drove 315 m from the upper floor, outdoors and down a ramp, into the lower floor, ending under its starting point. There is no simulator: the NavMap and Bonxai maps managers load the maps, the other components are dummies, and RViz2 shows them (`rviz:=false` to skip it).
-
-```bash
-ros2 launch easynav_playground_summit easynav_two_floors.launch.yaml
-```
-
-| Launch file | Controller | Localizer | Maps |
-| --- | --- | --- | --- |
-| `easynav_two_floors.launch.yaml` | Dummy | Dummy (`map -> odom` static) | Multi-level NavMap `maps/two_floors.navmap`; Bonxai `maps/two_floors_bonxai.pcd` |
-
-How the maps were built is in `easynav_playground_summit_worlds`.
-
 ### Localization
 
 In the excavation, the terrain is smooth and the Bonxai cloud is sparse, so NavMap AMCL has little to correct against: it keeps the heading from the IMU, but its position can drift 0.5–1 m from the true one. The GPS configuration is the accurate one outdoors (about 0.15 m): its map frame is the Gazebo world's (`latitude_origin`/`longitude_origin` are the world's `spherical_coordinates`).
