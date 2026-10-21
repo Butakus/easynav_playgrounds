@@ -17,7 +17,7 @@
        from AWS RoboMaker's aws-robomaker-small-warehouse-world -->
   <license file="models/LICENSE-aws-robomaker">MIT-0</license>
   <author email="fmrico@gmail.com">Francisco Martín Rico</author>
-  <author>juanscelyg, github.com/juanscelyg (the URJC excavation world)</author>
+  <author>Juan Sebastián Cely Gutierrez (the URJC excavation and parking garage worlds)</author>
   <author>Amazon.com, Inc. or its affiliates (the small warehouse world)</author>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
